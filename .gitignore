@@ -1,1 +1,9 @@
 wp-config.php
+
+#IDE
+.idea/*
+.vscode/*
+
+#Theme files
+wp-content/themes/atomix/node_modules
+wp-content/themes/atomix/dist

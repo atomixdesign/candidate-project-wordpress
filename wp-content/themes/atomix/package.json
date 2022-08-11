@@ -1,0 +1,32 @@
+{
+  "name": "atomix",
+  "version": "1.0.0",
+  "description": "Simplified version of the \"Twenty-Twenty-One\" theme from WordPress with webpack",
+  "private": true,
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "css-loader": "^4.3.0",
+    "file-loader": "^6.1.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "sass": "^1.53.0",
+    "sass-loader": "^10.0.2",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
+  },
+  "keywords": [
+    "wordpress",
+    "atomix",
+    "trial"
+  ],
+  "author": "Atomix",
+  "license": "MIT"
+}
