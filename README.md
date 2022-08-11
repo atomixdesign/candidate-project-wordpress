@@ -13,7 +13,7 @@ Once completed, please email a copy of your database and the uploads folder to r
 
 ## Theme Setup
 
-Refer the README.md file inside the atomix theme
+Refer the [README.md](https://github.com/atomixdesign/candidate-project-wordpress/tree/main/wp-content/themes/atomix) file inside the atomix theme
 
 ## How to submit your work?
 Fork this repo and provide us with a pull request to view your work. You can also inform us by emailing to the person who contacted you in regard to the trial.
