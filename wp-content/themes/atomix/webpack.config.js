@@ -10,7 +10,7 @@ const localDomain = 'https://candidate-project-wordpress.local.dev';
 const entryPoints = {
   // 'app' is the output name, people commonly use 'bundle'
   // you can have more than 1 entry point
-  'main': jsPath + '/main.js',
+  'main': jsPath + '/main.ts',
 };
 
 module.exports = {

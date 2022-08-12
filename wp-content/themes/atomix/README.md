@@ -11,7 +11,9 @@
 
 ### ** Note:
 
-Depending on your local environment setup you are using to run this WordPress site locally, you will need to update this line `const localDomain = 'https://candidate-project-wordpress.local.dev';` with the correct domain name in your environment to proxy IF you are using "LiveReload". If not, please comment out this section on the `webpack.config.js` file:
+Depending on your local environment setup you are using to run this WordPress site locally, you will need to update this line\
+`const localDomain = 'https://candidate-project-wordpress.local.dev';` with the correct domain name in your environment to proxy **IF** you are using "LiveReload". \
+If not, please comment out this section on the `webpack.config.js` file:
 
 ```javascript
 new BrowserSyncPlugin({
@@ -23,7 +25,7 @@ new BrowserSyncPlugin({
 
 ### Important
 
-We are using WebPack in this theme to compile the SCSS and JS files to the `dist` folder. So any SCSS or JS files, need to be included to their respective folders inside the `assets` folder to be watch via Webpack.
+We are using WebPack in this theme to compile the SCSS and TS files to the `dist` folder. So any SCSS or TS files, need to be included to their respective folders inside the `assets` folder to be watch via Webpack.
 
 All the Webpack configuration settings are in the `webpack.config.js` file. \
 You won't need to touch this file for your work. But it's there if needed to be edited.

@@ -18,6 +18,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" id="main-css" href="<?= get_template_directory_uri(); ?>/dist/main.css" media="all">
+    <script src="<?= get_template_directory_uri(); ?>/dist/main.js" type="text/javascript"></script>
 	<?php wp_head(); ?>
 </head>
 
