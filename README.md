@@ -11,9 +11,14 @@ Using the [Advanced Custom Field](https://www.advancedcustomfields.com/resources
 
 Once completed, please email a copy of your database and the uploads folder to review your work.
 
+## Project Setup
+I am sure you should already have a decent local environment setup to run PHP site locally, but if required, you can refer to one of these web development environments to setup one depending on our operating system:
+1. [WAMP](https://www.wampserver.com/en/)
+2. [XAMPP](https://www.apachefriends.org/)
+
 ## Theme Setup
 
-Refer the [README.md](https://github.com/atomixdesign/candidate-project-wordpress/tree/main/wp-content/themes/atomix) file inside the atomix theme
+Refer the [README.md](https://github.com/atomixdesign/candidate-project-wordpress/tree/main/wp-content/themes/atomix) file inside the atomix theme.
 
 ## How to submit your work?
 Fork this repo and provide us with a pull request to view your work. You can also inform us by emailing to the person who contacted you in regard to the trial.
