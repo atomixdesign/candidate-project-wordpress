@@ -1,0 +1,49 @@
+@include keyframes("menu-animation") {
+  0% {
+    max-height: 0;
+    padding: 0;
+  }
+  100% {
+    max-height: 463px;
+    padding: 3.375rem 0 3.75rem 0;
+  }
+}
+@include keyframes("menu-animation-out") {
+  0% {
+    max-height: 463px;
+    visibility: visible;
+    padding: 3.375rem 0 3.75rem 0;
+  }
+  100% {
+    max-height: 0;
+    visibility: hidden;
+    padding: 0;
+  }
+}
+@include keyframes("menu-animation-mobile") {
+  0% {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  100% {
+    max-height: 463px;
+    padding: 0;
+  }
+}
+@include keyframes("hero-arrow") {
+  0% {
+    bottom: calc($grid-gutter-width * 1.5);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    bottom: 0;
+  }
+}

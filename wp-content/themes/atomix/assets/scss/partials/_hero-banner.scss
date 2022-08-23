@@ -1,0 +1,71 @@
+.hero-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - var(--header-height-xs));
+
+  @include media-breakpoint-up(md) {
+    height: calc(100vh - var(--header-height));
+    max-height: calc(949 / 1440 * 100vw);
+  }
+  @include media-breakpoint-up(lg) {
+    height: calc(100vh - var(--header-height));
+    max-height: 949px;
+  }
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-content {
+    position: absolute;
+    padding: {
+      left: calc($grid-gutter-width / 2);
+      right: calc($grid-gutter-width / 2);
+    }
+    @include media-breakpoint-up(md) {
+      padding: {
+        left: $grid-gutter-width;
+        right: $grid-gutter-width;
+      }
+    }
+    h1 {
+      margin-bottom: 0.875em;
+      line-height: 1.2;
+      @include media-breakpoint-down(lg) {
+        font-size: 2.25rem;
+        line-height: 1.2;
+        margin-bottom: 1em;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 1.75rem;
+        line-height: 1.42;
+        margin-bottom: 38px;
+      }
+
+      br {
+        display: none;
+        @include media-breakpoint-up(xl) {
+          display: block;
+        }
+      }
+    }
+  }
+  &:after {
+    content: "\f175";
+    font-family: "Font Awesome 5 Pro";
+    font-style: normal;
+    font-weight: 300;
+    color: $secondary;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: $grid-gutter-width;
+    z-index: 6;
+    font-size: 50px;
+    animation: hero-arrow 2s linear infinite;
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}

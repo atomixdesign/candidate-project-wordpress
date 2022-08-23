@@ -15,7 +15,15 @@ $header_class = $show_title ? 'site-title' : 'screen-reader-text';
 ?>
 
 <?php if ( has_custom_logo() && $show_title ) : ?>
-	<div class="site-logo"><?php the_custom_logo(); ?></div>
+	<!-- <div class="site-logo"><?php the_custom_logo(); ?></div> -->
+	<a class="navbar-brand" href="#"
+      ><img
+        class="logo"
+        src="./images/logo.png"
+        srcset="./images/logo@2x.png 2x"
+        alt="logo"
+    /></a>
+
 <?php endif; ?>
 
 <div class="site-branding">
