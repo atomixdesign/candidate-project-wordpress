@@ -18,159 +18,59 @@
 
 	<footer id="colophon" class="site-footer bg-lightest">
 
-		<div class="container-md">
+	<div class="container-md">
   <div class="row">
     <div class="col-12 logo-wrapper">
-	<?php if ( has_custom_logo() ) : ?>
-		<?php // the_custom_logo(); ?>
-		<a class="footer-logo" href="#">
-			<img
-          class="footer-image"
-          src="<?= get_template_directory_uri(); ?>/assets/images/logo.png"
-          srcset="<?= get_template_directory_uri(); ?>/assets/images/logo@2x.png 2x"
-          alt="logo"
-      />
-	</a>
-	<?php endif; ?>
+	  <?php if ( has_custom_logo() ) : ?>
+        <a class="footer-logo" href="#">
+        <?php the_custom_logo(); ?>
+        </a>
+	  <?php endif; ?>
     </div>
   </div>
 
-  <?php if ( has_nav_menu( 'footer' ) ) : ?>
-			<nav aria-label="<?php esc_attr_e( 'Footer menu', 'twentytwentyone' ); ?>" class="footer-navigation">
-				<ul class="footer-navigation-wrapper">
-          <?php 
-		wp_nav_menu(
-			array(
-				'theme_location'  => 'footer',
-				'menu_class'      => 'accordion',
-				'container_class' => 'accordion-container',
-				'depth' => '2',
-				'fallback_cb'     => false,
-				'menu' => 'accordion-item',
-				
-			)
-		);
-		  ?>
-				</ul><!-- .footer-navigation-wrapper -->
-			</nav><!-- .footer-navigation -->
-		<?php endif; ?>
-
-    
-
-                            
-
+            
+<?php if( have_rows('footer_main_menu', 'option') ): $i = 0;?>
   <div class="accordion" id="FooterMenu">
+  <?php while( have_rows('footer_main_menu', 'option') ): the_row(); $i++;
+        $Level1heading = get_sub_field('footer_menu_heading');
+      ?>
     <div class="accordion-item">
-      <h2 class="accordion-header" id="heading1">
+      <h2 class="accordion-header" id="heading<?php echo $i; ?>">
         <button
           class="accordion-button collapsed"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#collapse1"
+          data-bs-target="#collapse<?php echo $i; ?>"
           aria-expanded="false"
-          aria-controls="collapseOne"
+          aria-controls="collapsearea<?php echo $i; ?>"
         >
-          About
+        <?php echo $Level1heading; ?>
         </button>
       </h2>
       <div
-        id="collapse1"
+        id="collapse<?php echo $i; ?>"
         class="accordion-collapse collapse"
-        aria-labelledby="heading1"
+        aria-labelledby="heading<?php echo $i; ?>"
         data-bs-parent="#FooterMenu"
       >
+      <?php if (have_rows('sub_links_repeater','option')): ?>
         <div class="accordion-body">
           <ul>
-            <li><a href="">About menu item 1</a></li>
-            <li><a href="">About menu item 2</a></li>
-            <li><a href="">About menu item 3</a></li>
+          <?php while (have_rows('sub_links_repeater','option')) : the_row();  ?>
+            <li><a href="<?php the_sub_field('sub_link_url'); ?>"><?php the_sub_field('sub_link_label'); ?></a></li>
+            <?php endwhile; ?>
           </ul>
         </div>
+        
+        <?php endif; ?>
       </div>
     </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="heading2">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapse2"
-          aria-expanded="false"
-          aria-controls="collapseTwo"
-        >
-          Services
-        </button>
-      </h2>
-      <div
-        id="collapse2"
-        class="accordion-collapse collapse"
-        aria-labelledby="heading2"
-        data-bs-parent="#FooterMenu"
-      >
-        <div class="accordion-body">
-          <ul>
-            <li><a href="">Services menu item 1</a></li>
-            <li><a href="">Services menu item 2</a></li>
-            <li><a href="">Services menu item 3</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="heading3">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapse3"
-          aria-expanded="false"
-          aria-controls="collapseThree"
-        >
-          Footer links
-        </button>
-      </h2>
-      <div
-        id="collapse3"
-        class="accordion-collapse collapse"
-        aria-labelledby="heading3"
-        data-bs-parent="#FooterMenu"
-      >
-        <div class="accordion-body">
-          <ul>
-            <li><a href="">Footer menu item 1</a></li>
-            <li><a href="">Footer menu item 2</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="heading4">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapse4"
-          aria-expanded="false"
-          aria-controls="collapse4"
-        >
-          Footer links
-        </button>
-      </h2>
-      <div
-        id="collapse4"
-        class="accordion-collapse collapse"
-        aria-labelledby="heading4"
-        data-bs-parent="#FooterMenu"
-      >
-        <div class="accordion-body">
-          <ul>
-            <li><a href="">Footer menu item 1</a></li>
-            <li><a href="">Footer menu item 2</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    
+    
+    <?php endwhile; ?>
   </div>
+  <?php endif; ?>
   <hr />
   <nav
     class="navbar navbar-expand navbar-light bg-lightest footer-bottom-navbar"
@@ -180,23 +80,20 @@
       <ul class="navbar-nav me-auto footer-links">
         <li class="nav-item">
           <span>© 2022 Company Inc.</span>
-
-		  
-
         </li>
+        <?php if( have_rows('footer_bottom_menu','option') ): ?>
+        <?php while( have_rows('footer_bottom_menu','option') ): the_row(); 
+          if( get_row_layout() == 'bottom_links' ):
+            $Bottomlabel = get_sub_field('link_label');
+        ?>
         <li class="nav-item">
-          <a class="nav-link" href="#">Terms and conditions</a>
+            <a class="nav-link" href="<?php the_sub_field('link_url'); ?>"><?php echo $Bottomlabel; ?></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Privacy policy</a>
-
-		  <?php
-			if ( function_exists( 'the_privacy_policy_link' ) ) {
-				the_privacy_policy_link( '<div class="privacy-policy">', '</div>' );
-			}
-			?>
-
-        </li>
+        <?php 
+        endif;
+        endwhile;
+        endif; ?>
+        
         <li class="nav-item">
 			<span>
 				<?php

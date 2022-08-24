@@ -28,9 +28,7 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v6.1.2/css/all.css?ver=6.1.2"
     />
-	
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
 
 	<?php wp_head(); ?>
 </head>

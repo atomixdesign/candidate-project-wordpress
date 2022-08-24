@@ -14,6 +14,17 @@ if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
+function bootstrap_scripts_with_jquery()
+{
+    // Register the script like this for a theme:
+
+    wp_enqueue_script( 'jqueryJs', 'https://code.jquery.com/jquery-3.1.0.min.js' );
+    wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' );
+    wp_enqueue_script( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js' );
+
+}
+add_action( 'wp_enqueue_scripts', 'bootstrap_scripts_with_jquery' );
+
 if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.

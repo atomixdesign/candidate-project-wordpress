@@ -24,6 +24,7 @@ footer {
     .footer-logo {
       img {
         max-width: 193px;
+        height: auto !important;
         @include media-breakpoint-up(md) {
           max-width: 220px;
         }

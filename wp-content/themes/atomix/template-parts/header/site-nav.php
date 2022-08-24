@@ -107,12 +107,15 @@
       </ul>
       <?php endif; ?>
       
-
+      <?php if( get_field('menu_right_button', 'option') ): ?>
+        <?php while( have_rows('menu_right_button', 'option') ): the_row(); ?>
       <ul class="navbar-nav ms-auto me-0 header-action">
         <li>
-          <button type="button" class="btn btn-light btn-sm">Contact us</button>
+          <a class="btn btn-light btn-sm" href=""><?php the_sub_field('button_label') ?></a>
         </li>
       </ul>
+      <?php endwhile; ?>
+      <?php endif; ?>
     </div>
 
 
