@@ -33,3 +33,11 @@ We recommend sending the completed pull request as soon as possible, but we woul
 
 ## Theme Source
 The theme used in this trial is a simplified version of the "Twenty-Twenty-One" theme from WordPress.
+
+## WordPress database
+### Starter database 
+(candidate-wordpress.sql)[https://drive.google.com/file/d/1gI55OxEYLNlsguF7fVTcYADCUniXiAzs/view?usp=sharing]
+
+### Database credentials
+Username - `atomix`
+Password - `6riuG6bngMwJ3#yHRA`
