@@ -3,7 +3,8 @@ wp-config.php
 #IDE
 .idea/*
 .vscode/*
-
+.DS_Store
+*/.DS_Store 
 #Theme files
 wp-content/themes/atomix/node_modules
 wp-content/themes/atomix/dist

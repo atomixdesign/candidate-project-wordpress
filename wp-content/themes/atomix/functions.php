@@ -14,6 +14,17 @@ if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
+function bootstrap_scripts_with_jquery()
+{
+    // Register the script like this for a theme:
+
+    wp_enqueue_script( 'jqueryJs', 'https://code.jquery.com/jquery-3.1.0.min.js' );
+    wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' );
+    wp_enqueue_script( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js' );
+
+}
+add_action( 'wp_enqueue_scripts', 'bootstrap_scripts_with_jquery' );
+
 if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -75,6 +86,7 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 			array(
 				'primary' => esc_html__( 'Primary menu', 'twentytwentyone' ),
 				'footer'  => esc_html__( 'Secondary menu', 'twentytwentyone' ),
+				'bottom'  => esc_html__( 'Bottom menu', 'twentytwentyone' ),
 			)
 		);
 
@@ -539,6 +551,9 @@ require get_template_directory() . '/inc/template-functions.php';
 // Menu functions and filters.
 require get_template_directory() . '/inc/menu-functions.php';
 
+// Menu functions and filters.
+require get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+
 // Custom template tags for the theme.
 require get_template_directory() . '/inc/template-tags.php';
 
@@ -640,6 +655,25 @@ function twentytwentyone_add_ie_class() {
 	<?php
 }
 add_action( 'wp_footer', 'twentytwentyone_add_ie_class' );
+
+// create option page for theme settings
+add_action('acf/init', 'my_acf_op_init');
+function my_acf_op_init()
+{
+    // Check function exists.
+    if (function_exists('acf_add_options_page')) {
+        // Register options page.
+        $option_page = acf_add_options_page([
+            'page_title' => __('Atomix General Settings'),
+            'menu_title' => __('Atomix Settings'),
+            'menu_slug' => 'theme-general-settings',
+            'capability' => 'edit_posts',
+			'post_id' => 'options',
+            'icon_url' => '/wp-content/themes/atomix/assets/images/favicon-16x16.png',
+            'redirect' => false,
+        ]);
+    }
+}
 
 if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	/**

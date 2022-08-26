@@ -4,7 +4,10 @@
   "description": "Simplified version of the \"Twenty-Twenty-One\" theme from WordPress with webpack",
   "private": true,
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "bootstrap": "5.2.0",
+    "normalize.css": "^8.0.1",
+    "flickity": "^3.0.0",
+    "flickity-fade": "^2.0.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.12",

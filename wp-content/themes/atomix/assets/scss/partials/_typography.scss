@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+// font-family: 'Montserrat', sans-serif;
+ul {
+  &.arrow-list {
+    padding: 0;
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    li {
+      font-weight: 400;
+      font-size: 1.0625rem;
+      line-height: calc(28 / 17);
+      list-style: none;
+      padding-left: 20px;
+      position: relative;
+      @include media-breakpoint-up(md) {
+        font-size: 1rem;
+        line-height: calc(30 / 16);
+        padding-left: 30px;
+      }
+      &:before {
+        content: "\f105";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 300;
+        color: $secondary;
+        left: 0;
+        position: absolute;
+        @include media-breakpoint-up(md) {
+        }
+      }
+    }
+  }
+}
+p {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: calc(30 / 16);
+  @include media-breakpoint-up(md) {
+    font-size: 1rem;
+  }
+}
+
+h1 {
+  font-size: 1.75rem;
+  @include media-breakpoint-up(md) {
+    @include font-size($h1-font-size);
+  }
+}
+h2 {
+  font-size: 1.25rem;
+  @include media-breakpoint-up(md) {
+    @include font-size($h2-font-size);
+  }
+}
+h3 {
+  font-size: 1.0625rem;
+  @include media-breakpoint-up(md) {
+    @include font-size($h3-font-size);
+  }
+}

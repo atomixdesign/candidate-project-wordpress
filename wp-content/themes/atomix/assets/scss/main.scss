@@ -1,5 +1,19 @@
-@import "~/node_modules/normalize.css/normalize.css";
-
-html, body {
-  color: red;
-}
+@use "sass:map";
+@use "sass:math";
+// @import "~/node_modules/normalize.css/normalize.css";
+@import "partials/variables";
+@import "partials/root";
+@import "~/node_modules/bootstrap/scss/bootstrap.scss";
+@import "fontawesome/fontawesome";
+@import "partials/mixins";
+@import "partials/extend";
+@import "partials/keyframes";
+@import "partials/common";
+@import "partials/buttons";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/typography";
+@import "partials/hero-banner";
+@import "partials/home-page";
+@import "partials/carousel-slider";
+@import "partials/team-grid";

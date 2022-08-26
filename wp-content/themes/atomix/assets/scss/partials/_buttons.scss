@@ -1,0 +1,22 @@
+.btn {
+  text-transform: uppercase;
+  &:not(.btn-sm, .btn-lg) {
+    font-size: 15px;
+    min-width: 12.4em;
+    padding: {
+      top: 1rem;
+      bottom: 1rem;
+    }
+    @include media-breakpoint-up(md) {
+      min-width: 14.5rem;
+      font-size: $input-btn-font-size;
+      padding: {
+        top: --bs-btn-padding-y;
+        bottom: --bs-btn-padding-y;
+      }
+    }
+  }
+  &.btn-secondary {
+    color: $white;
+  }
+}
